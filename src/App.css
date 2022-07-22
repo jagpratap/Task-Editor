@@ -1,38 +1,183 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+    /* colors */
+    --primary-100: #e2e0ff;
+    --primary-200: #c1beff;
+    --primary-300: #a29dff;
+    --primary-400: #837dff;
+    --primary-500: #645cff;
+    --primary-600: #504acc;
+    --primary-700: #3c3799;
+    --primary-800: #282566;
+    --primary-900: #141233;
+
+    /* grey */
+    --grey-50: #f8fafc;
+    --grey-100: #f1f5f9;
+    --grey-200: #e2e8f0;
+    --grey-300: #cbd5e1;
+    --grey-400: #94a3b8;
+    --grey-500: #64748b;
+    --grey-600: #475569;
+    --grey-700: #334155;
+    --grey-800: #1e293b;
+    --grey-900: #0f172a;
+    /* rest of the colors */
+    --black: #222;
+    --white: #fff;
+    --blue1: #24a0eda1;
+    --blue2: #24a0edbe;
+    --red-light: #f8d7da;
+    --red-dark: #842029;
+    --green-light: #d1e7dd;
+    --green-dark: #0f5132;
+
+    /* fonts  */
+
+    --small-text: 0.875rem;
+    --extra-small-text: 0.7em;
+    /* rest of the vars */
+    --backgroundColor: var(--grey-50);
+    --textColor: var(--grey-900);
+    --borderRadius: 0.5rem;
+    --letterSpacing: 0.8px;
+
+    /* box shadow*/
+    --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-3: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-4: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+    font-family: 'Roboto', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+h1 {
+    font-size: 1.5em;
+    font-weight: 300;
+    margin-bottom: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+input,
+textarea,
+.btn {
+    border-style: none;
+    border: 1px solid grey;
+    border-radius: var(--borderRadius);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn {
+    text-decoration: none;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: var(--blue1);
+    cursor: pointer;
+    letter-spacing: var(--letterSpacing);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--small-text);
+}
+
+.btn:focus {
+    background-color: var(--blue2);
+}
+
+.main {
+    background-color: var(--backgroundColor);
+    height: 100vh;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.section {
+    margin: 20px 80px;
+}
+
+/***********************************/
+.nav {
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background-color: var(--white);
+    box-shadow: var(--shadow-2);
+}
+
+.nav-logo {
+    width: 35px;
+    margin-left: 20px;
+    margin-right: 40px;
+}
+
+.nav-link {
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.2rem;
+    color: var(--textColor);
+}
+
+/***********************************/
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    background-color: var(--grey-300);
+    border: 1px solid var(--grey-400);
+    border-radius: var(--borderRadius);
+    padding: 20px 40px;
+    box-shadow: 5px 5px 6px -1px rgba(0, 0, 0, 0.25);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    letter-spacing: var(--letterSpacing);
+}
+
+.form-control {
+    padding: 5px 10px;
+    letter-spacing: var(--letterSpacing);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--small-text);
+}
+
+.form-control-time,
+.form-group-button {
+    width: 40%;
+}
+
+/***********************************/
+.table {
+    margin-top: 50px;
+    margin-bottom: 20px;
+    background-color: var(--grey-300);
+    border: 1px solid var(--grey-400);
+    border-radius: var(--borderRadius);
+    box-shadow: 5px 5px 6px -1px rgba(0, 0, 0, 0.25);
+    width: 90%;
+}
+
+th,
+td {
+    padding: 5px 10px;
+    margin: 50px;
+    letter-spacing: var(--letterSpacing);
+    font-family: 'Roboto', sans-serif;
+    font-size: var(--small-text);
 }
